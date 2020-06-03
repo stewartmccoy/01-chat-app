@@ -12,7 +12,7 @@ class ChatInput extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        this.props.onValueSubmit(this.inputRef.current.value);
+        this.props.onValueSubmit && this.props.onValueSubmit(this.inputRef.current.value);
     }
 
     render() {
