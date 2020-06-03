@@ -4,14 +4,16 @@ import Message from './Message';
 import ChatInput from './ChatInput';
 
 class Tweet extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: '' };
+  state = {
+    value: ''
   }
 
-  handleChange(message) {
+  handleValue = message => {
     console.log(message);
-    this.setState({ value: message });
+    this.setState({
+      value: message
+    });
+    console.log('State: ', this.state.value);
   }
 
   render() {
@@ -19,7 +21,7 @@ class Tweet extends React.Component {
       <div>
         <Message text={testTweet.message} />
         <Message text={this.state.value} />
-        <ChatInput onChange={this.handleChange} />
+        <ChatInput onValueSubmit={this.handleValue} />
       </div>
     )
   }

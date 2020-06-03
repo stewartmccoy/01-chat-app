@@ -4,14 +4,15 @@ import SendButton from './SendButton';
 class ChatInput extends Component {
     constructor(props) {
         super(props);
+        
         this.inputRef = React.createRef();
-        this.state = { value: this.inputRef };
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(event) {
+    handleSubmit = event => {
         event.preventDefault();
-
-        this.props.onChange && this.props.onChange(this.inputRef);
+        this.props.onValueSubmit(this.inputRef.current.value);
     }
 
     render() {
@@ -22,28 +23,5 @@ class ChatInput extends Component {
         )
     }
 }
-
-// class ChatInput extends Component {
-
-//     // constructor(props) {
-//     //     super(props);
-//     //     // this.state = { value: '' };
-
-//     //     // this.handleChange = this.handleChange.bind(this);
-//     //     // this.handleSubmit = this.handleSubmit.bind(this);
-//     // }
-
-//     // handleChange(event) {
-//     //     this.setState({ value: event.target.value });
-//     // }
-
-//     // state = { value: '' };
-
-//     render() {
-//         return (
-
-//         )
-//     }
-// }
 
 export default ChatInput;
