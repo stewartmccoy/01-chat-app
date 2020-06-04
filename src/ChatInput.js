@@ -7,8 +7,14 @@ class ChatInput extends Component {
         
         this.inputRef = React.createRef();
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    // the syntax below requires binding this — see L10
+    // handleSubmit(event) {
+    //     event.preventDefault();
+    //     this.props.onValueSubmit && this.props.onValueSubmit(this.inputRef.current.value);
+    // }
 
     handleSubmit = event => {
         event.preventDefault();
